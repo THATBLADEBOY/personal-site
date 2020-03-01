@@ -11,7 +11,9 @@ const IndexPage = ({ data }) => (
         key={key}
         post={{
           ...node.node.article,
-          tag_list_array: node.node.article.tag_list.split(',').map(tag => tag.trim()),
+          tag_list_array: node.node.article.tag_list
+            .split(',')
+            .map(tag => tag.trim()),
         }}
       />
     ))}

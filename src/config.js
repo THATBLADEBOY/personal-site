@@ -1,7 +1,7 @@
 export default {
   siteMetadata: {
-    title: 'Gatsby + Dev.to Starter',
-    header: 'gatsby-starter-devto'
+    title: 'Austin Blade',
+    header: 'austin blade',
   },
-  devtoUsername: 'geocine'
+  devtoUsername: 'geocine',
 }

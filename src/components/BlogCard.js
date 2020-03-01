@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 
 import styled from '@emotion/styled'
 
@@ -8,26 +8,22 @@ import Card from './Card'
 const BlogCardStyle = styled.div`
   margin: -20px 0;
   h3 {
+    color: var(--textTitle);
     margin: 0px;
     font-size: 27px;
     line-height: 32px;
   }
   h4 {
+    color: var(--textTitle);
     margin: 0;
     font-size: 17px;
   }
   a {
     color: #0a0a0a;
   }
-  .tags {
-    font-size: 16px;
-    a {
-      margin-right: 8px;
-    }
-    text-overflow: ellipsis;
-    color: #0a0a0a;
-    overflow: hidden;
-    white-space: nowrap;
+  .tag,
+  .postDate {
+    color: var(--textTitle);
   }
   .article-engagement-count {
     font-family: 'HelveticaNeue-CondensedBold', 'HelveticaNeueBoldCondensed',
@@ -38,7 +34,7 @@ const BlogCardStyle = styled.div`
     display: inline-block;
     margin-right: 20px;
     margin-top: 10px;
-    color: #666;
+    color: var(--textTitle);
     img {
       height: 20px;
       min-width: 26px;
@@ -46,6 +42,7 @@ const BlogCardStyle = styled.div`
       margin-right: 7px;
     }
     .engagement-count-number {
+      color: var(--textTitle);
       font-size: 15px;
       font-weight: 400;
     }
@@ -61,7 +58,9 @@ const BlogCard = ({ post }) => (
         </div>
       </Link>
       <h4>
-        <Link to="/">{post.readable_publish_date}</Link>
+        <Link className="postDate" to="/">
+          {post.readable_publish_date}
+        </Link>
       </h4>
       <div className="tags">
         {post.tag_list_array.map((tag, key) => (

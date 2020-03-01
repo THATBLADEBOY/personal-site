@@ -13,10 +13,9 @@ const BlogPostStyle = styled.div`
     font-weight: 500;
     a {
       text-decoration: none;
-      color: black;
+      color: var(--textTitle);
     }
   }
-
   div.body {
     h1 {
       font-size: 1.85em;
@@ -37,12 +36,15 @@ const BlogPostStyle = styled.div`
       display: block;
     }
   }
+  .content {
+    color: var(--textTitle);
+  }
 
   @media only screen and (max-width: 420px) {
     div.body {
       div.highlight pre {
         padding: 5% 5% 5% 20px;
-        margin: 20px -20px;
+        margin: 100%;
       }
       iframe {
         width: 100%;
@@ -53,7 +55,7 @@ const BlogPostStyle = styled.div`
 
 const BlogPost = ({ post }) => {
   const removeWrappers = html => {
-    (['html', 'body']).forEach(tag => {
+    ;['html', 'body'].forEach(tag => {
       html = html.replace(`<${tag}>`, '')
       html = html.replace(`</${tag}>`, '')
     })
@@ -62,7 +64,7 @@ const BlogPost = ({ post }) => {
   const Content = Parser(removeWrappers(post.body_html), {
     replace: ({ attribs, children }) => {
       let content
-      ([linkBlock]).some(transform => (content = transform(attribs, children)))
+      ;[linkBlock].some(transform => (content = transform(attribs, children)))
       return content
     },
   })
@@ -72,7 +74,7 @@ const BlogPost = ({ post }) => {
         <h1 className="title">
           <a href={`/${post.slug}`}>{post.title}</a>
         </h1>
-        <div className="body">{Content}</div>
+        <div className="body content">{Content}</div>
       </BlogPostStyle>
     </Card>
   )

@@ -1,12 +1,13 @@
 import styled from '@emotion/styled'
 
 const Card = styled.div`
-  background: #fff;
+  background: var(--cardbg);
   margin: 20px auto;
   text-align: left;
-  border: 1px solid #d6d6d6;
-  box-shadow: 3px 3px 0px #bababa;
-  border-radius: 3px;
+  box-shadow: 10px 14px 16px -13px rgba(0, 0, 0, 0.75);
+  border-style: solid;
+  border-color: #121212;
+  border-radius: 10px;
   max-width: 800px;
   width: auto;
   padding: 50px ${props => props.padding || 85}px;
