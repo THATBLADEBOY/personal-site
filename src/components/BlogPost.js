@@ -43,11 +43,20 @@ const BlogPostStyle = styled.div`
   @media only screen and (max-width: 420px) {
     div.body {
       div.highlight pre {
-        padding: 5% 5% 5% 20px;
-        margin: 100%;
-      }
-      iframe {
-        width: 100%;
+        background: #29292e;
+        border-radius: 2px;
+        overflow-x: auto;
+        color: #eff0f9;
+        line-height: 1.42em;
+        padding-left: 4%;
+        padding-right: 7%;
+        font-size: 0.7em;
+        width: 97%;
+        margin-left: -3%;
+        padding-top: 6%;
+        padding-bottom: 6%;
+        border-radius: 0;
+        overflow-wrap: normal;
       }
     }
   }

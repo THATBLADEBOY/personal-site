@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+import UserNinja from '../icons/userNinja'
 
 import config from '../config'
 import './styles.scss'
@@ -21,11 +22,21 @@ const Header = styled.div`
     color: #0a0a0a;
   }
 
+  .aboutMe {
+    margin-right: 30px;
+    height: 5px;
+  }
+
+  .rightHeader {
+    margin-top: 5px;
+  }
+
   .switch {
     position: relative;
     display: inline-block;
     width: 45px;
     height: 18px;
+    top: 2px;
   }
 
   .switch input {
@@ -89,18 +100,26 @@ const TemplateWrapper = ({ children }) => (
         <h3>
           <Link to="/">{config.siteMetadata.header}</Link>
         </h3>
-        <ThemeToggler>
-          {({ theme, toggleTheme }) => (
-            <label class="switch">
-              <input
-                type="checkbox"
-                onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
-                checked={theme === 'dark'}
-              />
-              <span class="slider round"></span>
-            </label>
-          )}
-        </ThemeToggler>
+        <div className="rightHeader">
+          <Link className="aboutMe" to="/about-me">
+            <UserNinja />
+          </Link>
+          <ThemeToggler>
+            {({ theme, toggleTheme }) => (
+              <label class="switch">
+                <input
+                  type="checkbox"
+                  onChange={e =>
+                    toggleTheme(e.target.checked ? 'dark' : 'light')
+                  }
+                  value={!!theme === 'dark'}
+                  checked={theme === 'dark'}
+                />
+                <span class="slider round"></span>
+              </label>
+            )}
+          </ThemeToggler>
+        </div>
       </Header>
       {children}
     </main>

@@ -21,7 +21,6 @@ const BlogCardStyle = styled.div`
   a {
     color: #0a0a0a;
   }
-  .tag,
   .postDate {
     color: var(--textTitle);
   }
@@ -62,13 +61,6 @@ const BlogCard = ({ post }) => (
           {post.readable_publish_date}
         </Link>
       </h4>
-      <div className="tags">
-        {post.tag_list_array.map((tag, key) => (
-          <a key={key} href="/">
-            <span className="tag">{`#${tag}`}</span>
-          </a>
-        ))}
-      </div>
       <div className="article-engagement-count reactions-count">
         <Link to={post.slug}>
           <img src="/assets/reactions-stack.svg" alt="Reactions" />
