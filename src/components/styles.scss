@@ -4,7 +4,7 @@
 @import './liquid-tags/LiquidTags';
 
 a {
-  color: #6200ee;
+  color: var(--primaryColor);
   text-decoration: none;
 }
 
@@ -42,6 +42,7 @@ body {
   --textLink: blue;
   --hr: hsla(0, 0%, 0%, 0.2);
   --postTitle: #6200ee;
+  --primaryColor: #6200ee;
 
   background-color: var(--bg);
 }
@@ -56,4 +57,5 @@ body.dark {
   --textLink: yellow;
   --hr: hsla(0, 0%, 100%, 0.2);
   --postTitle: white;
+  --primaryColor: #a45dfb;
 }

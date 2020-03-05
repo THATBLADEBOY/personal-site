@@ -63,17 +63,17 @@ const Header = styled.div`
     height: 20px;
     width: 20px;
     bottom: -1px;
-    background-color: #6200ee;
+    background-color: var(--primaryColor);
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
 
   input:checked + .slider {
-    background-color: #6200ee;
+    background-color: var(--primaryColor);
   }
 
   input:focus + .slider {
-    box-shadow: 0 0 1px #6200ee;
+    box-shadow: 0 0 1px var(--primaryColor);
   }
 
   input:checked + .slider:before {

@@ -13,7 +13,7 @@ const Card = styled.div`
   padding: 50px ${props => props.padding || 85}px;
 
   @media only screen and (max-width: 420px) {
-    padding: 50px 20px;
+    padding: 5%;
     margin: 0 5px 10px 5px;
   }
 `

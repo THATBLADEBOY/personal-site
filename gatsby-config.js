@@ -6,12 +6,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-dev',
       options: {
-        username: 'geocine'
+        username: 'geocine',
       },
     },
     'gatsby-plugin-dark-mode',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-netlify'
+    'gatsby-plugin-netlify',
+    { resolve: `gatsby-source-filesystem`, options: { path: `./src/images/` } },
   ],
 }

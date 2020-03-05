@@ -8,13 +8,11 @@ import Card from './Card'
 const BlogPostStyle = styled.div`
   h1.title {
     margin: 0;
-    font-size: calc(1.85vw + 25px);
-    line-height: calc(1.85vw + 35px);
+    font-size: calc(1vw + 25px);
+    line-height: calc(1vw + 35px);
     font-weight: 500;
-    a {
-      text-decoration: none;
-      color: var(--textTitle);
-    }
+    text-decoration: none;
+    color: var(--textTitle);
   }
   div.body {
     h1 {
@@ -80,9 +78,7 @@ const BlogPost = ({ post }) => {
   return (
     <Card>
       <BlogPostStyle>
-        <h1 className="title">
-          <a href={`/${post.slug}`}>{post.title}</a>
-        </h1>
+        <h1 className="title">{post.title}</h1>
         <div className="body content">{Content}</div>
       </BlogPostStyle>
     </Card>
